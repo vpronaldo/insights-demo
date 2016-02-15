@@ -1,0 +1,153 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "analytics",
+   "children": [
+    {
+     "name": "cdisease4",
+     "children": [
+      {"name": "Acute Diarrhoea", "size": 52091,"type":"d"},
+      {"name": "Malaria", "size": 1551,"type":"d"},
+      {"name": "Japenese Encephalitis", "size": 252,"type":"d"},
+      {"name": "Viral Hepatitis", "size": 47150,"type":"d"}
+     ]
+    },
+    {
+     "name": "cpollution5",
+     "children": [
+      {"name": "Temperature", "size": 0,"type":"p"},
+      {"name": "oxygen", "size": 31007,"type":"p"},
+      {"name": "pH", "size": 44835,"type":"p"},
+      {"name": "conductivity", "size": 62230,"type":"p"},
+      {"name": "biochemicaloxygen", "size": 11,"type":"p"},
+      {"name": "nitrate", "size": 2087,"type":"p"},
+      {"name": "coliform", "size": 4631,"type":"p"}
+     ]
+    }
+   ]
+  },
+
+  {
+   "name": "animate",
+   "children": [
+    {
+     "name": "clusterdisease3",
+     "children": [
+       {"name": "Acute Diarrhoea", "size": 52091,"type":"d"},
+      {"name": "Malaria", "size": 1551,"type":"d"},
+      {"name": "Japenese Encephalitis", "size": 25200,"type":"d"},
+      {"name": "Viral Hepatitis", "size": 47150,"type":"d"}
+     ]
+    },
+     {
+     "name": "cpollution1",
+     "children": [
+      {"name": "Temperature", "size": 7362,"type":"p"},
+      {"name": "oxygen", "size": 328,"type":"p"},
+      {"name": "pH", "size": 2312,"type":"p"},
+      {"name": "conductivity", "size": 3952,"type":"p"},
+      {"name": "biochemicaloxygen", "size": 0.6,"type":"p"},
+      {"name": "nitrate", "size": 44.7,"type":"p"},
+      {"name": "coliform", "size": 2242.1,"type":"p"}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "data",
+   "children": [
+    {
+     "name": "converters",
+     "children": [
+     
+     ]
+    }
+   ]
+  },
+  {
+   "name": "display",
+   "children": [
+ {
+     "name": "cpollution1",
+     "children": [
+      {"name": "Temperature", "size": 7362,"type":"p"},
+      {"name": "oxygen", "size": 328,"type":"p"},
+      {"name": "pH", "size": 2312,"type":"p"},
+      {"name": "conductivity", "size": 3952,"type":"p"},
+      {"name": "biochemicaloxygen", "size": 0.6,"type":"p"},
+      {"name": "nitrate", "size": 44.7,"type":"p"},
+      {"name": "coliform", "size": 2242.1,"type":"p"}
+     ]
+    },
+ {
+     "name": "clusterdisease5",
+     "children": [
+       {"name": "Acute Diarrhoea", "size": 10493,"type":"d"},
+      {"name": "Malaria", "size": 39172,"type":"d"},
+      {"name": "Japenese Encephalitis", "size": 0,"type":"d"},
+      {"name": "Viral Hepatitis", "size": 3589,"type":"d"}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "util",
+   "children": [
+    {
+     "name": "cp2",
+     "children": [
+      {"name": "Temperature", "size": 0,"type":"p"},
+      {"name": "oxygen", "size": 100000,"type":"p"},
+      {"name": "pH", "size": 100000,"type":"p"},
+      {"name": "conductivity", "size": 4356,"type":"p"},
+      {"name": "biochemicaloxygen", "size": 100000,"type":"p"},
+      {"name": "nitrate", "size": 100000,"type":"p"},
+      {"name": "coliform", "size": 15,"type":"p"}
+     ]
+    },
+    {
+     "name": "cd4",
+     "children": [
+     {"name": "Acute Diarrhoea", "size": 52091,"type":"d"},
+      {"name": "Malaria", "size": 1551,"type":"d"},
+      {"name": "Japenese Encephalitis", "size": 252,"type":"d"},
+      {"name": "Viral Hepatitis", "size": 47150,"type":"d"}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "vis",
+   "children": [
+    {
+     "name": "axis",
+     "children": [
+   
+     ]
+    },
+    {
+     "name": "clusterdisease3",
+     "children": [
+     {"name": "Acute Diarrhoea", "size": 52091,"type":"d"},
+      {"name": "Malaria", "size": 1551,"type":"d"},
+      {"name": "Japenese Encephalitis", "size": 25200,"type":"d"},
+      {"name": "Viral Hepatitis", "size": 47150,"type":"d"}
+     ]
+    },
+    {
+     "name": "clusterpollution4",
+     "children": [
+       {"name": "Temperature", "size": 454,"type":"p"},
+      {"name": "oxygen", "size": 0,"type":"p"},
+      {"name": "pH", "size": 0,"type":"p"},
+      {"name": "conductivity", "size": 247,"type":"p"},
+      {"name": "biochemicaloxygen", "size": 0.06,"type":"p"},
+      {"name": "nitrate", "size": 5.4,"type":"p"},
+      {"name": "coliform", "size": 100000,"type":"p"}
+     ]
+    }
+   ]
+  }
+ ]
+}

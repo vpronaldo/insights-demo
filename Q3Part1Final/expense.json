@@ -1,0 +1,111 @@
+[
+  {
+    "key": "Ninth Plan",
+    "color": "#d67777",
+    "values": [
+      { 
+        "label" : "Vector-borne" ,
+        "value" : 1000
+      } , 
+      { 
+        "label" : "Leprosy" ,
+        "value" : 301
+      } , 
+      { 
+        "label" : "AIDS" ,
+        "value" : 760
+      } , 
+      { 
+        "label" : "Guinea Worm" ,
+        "value" : 2
+      } , 
+      {
+        "label" : "Disease Surveillance" ,
+        "value" : 25
+      } , 
+      { 
+        "label" : "Blindness" ,
+        "value" : 448
+      } , 
+      { 
+        "label" : "Cancer" ,
+        "value" : 190
+      } , 
+      {
+        "label" : "Iodine Deficieny" ,
+        "value" : 18
+      } , 
+      { 
+        "label" : "Mental Health" ,
+        "value" : 28
+      },
+      { 
+        "label" : "De-addiction" ,
+        "value" : 20
+      } , 
+      {
+        "label" : "Tuberculosis" ,
+        "value" : 31.50
+      } , 
+      { 
+        "label" : "BCG" ,
+        "value" : 5
+      }
+      
+    ]
+  },
+  {
+    "key": "Tenth Plan",
+    "color": "#4f99b4",
+    "values": [
+      { 
+        "label" : "Vector-borne" ,
+        "value" : 1370
+      } , 
+      { 
+        "label" : "Leprosy" ,
+        "value" : 255
+      } , 
+      { 
+        "label" : "AIDS" ,
+        "value" : 1270
+      } , 
+      {
+        "label" : "Disease Surveillance" ,
+        "value" : 190
+      } , 
+      { 
+        "label" : "Blindness" ,
+        "value" : 445
+      } , 
+      { 
+        "label" : "Cancer" ,
+        "value" : 285
+      } , 
+      {
+        "label" : "Iodine Deficieny" ,
+        "value" : 35
+      } , 
+      { 
+        "label" : "Mental Health" ,
+        "value" : 190
+      },
+      { 
+        "label" : "De-addiction" ,
+        "value" : 33
+      } , 
+      {
+        "label" : "Tuberculosis" ,
+        "value" : 64.80
+      } , 
+      { 
+        "label" : "BCG" ,
+        "value" : 19.50
+      },
+      { 
+        "label" : "Pulse Polio" ,
+        "value" : 3110
+      }
+    ]
+  }
+]

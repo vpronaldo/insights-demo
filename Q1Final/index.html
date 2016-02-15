@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset=utf-8 />
+  <title>Most Prevailing Diseases in India</title>
+
+
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+  <link href='nv.d3.min.css' rel='stylesheet' />
+  
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+  <style>
+
+  body {
+    background-color: black;
+    margin:0; padding:0;
+}
+
+#mapcontainer {height:750px; }
+
+#map { position:absolute; top:0; bottom:0; width:100%; height:100%; }
+
+.barone {
+  fill: steelblue;
+}
+
+
+
+
+.map-legend i {
+   width: 18px;
+   height: 18px;
+   float: left;
+   margin-right: 8px;
+   opacity: 0.7;
+}
+.leaflet-popup-close-button {
+   display: none;
+}
+.leaflet-popup-content-wrapper {
+   pointer-events: none;
+}
+
+ .bar-graph {
+
+  width: 350px;
+  height: 350px;
+
+  border: thin solid grey;
+  background: black;
+  opacity: 1;
+  text-align: center;
+}
+
+.questionnew {
+
+
+  width: 350px;
+  height: 350px;
+
+  
+  background: black;
+  opacity: 1;
+  text-align: center;
+  font-color: white;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+.filter-ui {
+    background: green;
+    color: white;
+    position:absolute;
+    top: 300px;
+    left: 1200px;
+    z-index: 100;
+    padding: 10px;
+    border: thin solid grey;
+    border-radius:3px;
+}
+
+.census-banner a {
+    background: black;
+    color: #ffd700;
+    position:absolute;
+    top: 303px;
+    left: 710px;
+    z-index: 1;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    border: thin solid grey;
+    text-decoration: none;
+    border-radius:3px;
+}
+
+.census-banner a:hover {
+    text-decoration: underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!--<div class="census-banner">
+    <a href="http://www.census2011.co.in/" target="_blank">India Census - 2011</a>
+</div>-->
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../index.html">DataView 2016</a>
+    </div>
+    <ul class="nav navbar-nav">
+     <li ><a href="../index.html">Home</a></li>
+      <li class="active"><a href="index.html">Q1</a></li>
+      <li><a href="../Q2Final/index.html">Q2</a></li>
+      <li><a href="../Q3Part1Final/main.html">Q3 Part 1</a></li>
+      <li><a href="../Q3Part2Final/linebar.html">Q3 Part 2</a></li> 
+      <li><a href="../Q4Final/index.html">Q4</a></li> 
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../aboutus.html">Team</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container col-sm-12">
+    <div id='mapcontainer' class="container col-sm-8">
+        <div id='map' class='map'> 
+        </div>
+    </div>
+    <div class="container col-sm-4">
+      <div class="container">
+        <div class="questionnew">
+          <font color="white">What diseases are most prevalent in a given area?</font>
+          <br>
+          <br>
+          <font color="white">Hover over the states to find the data</font>
+
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Methodology</button>
+
+         </div>
+         
+     </div>        
+
+
+        <div class="container">
+         <div class="bar-graph">
+          <font color="white">% Diseases in states</font>
+         </div>
+     </div>
+     
+ </div>
+</div>
+
+
+ <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Data Sets</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            <ul>
+              <li><a href="https://data.gov.in/catalog/number-cases-and-deaths-due-diseases">H-DS-1</a>: All India (from 2000 to 2011) and State-wise (2010 and 2011) number of cases and deaths due to specified diseases (Acute Diarrhoeal Diseases, Malaria, Acute Respiratory Infection, Japanese Encephalitis, Viral Hepatitis)</li>
+            </ul>
+        </p>
+         <div class="modal-header">
+         
+          <h4 class="modal-title">Methodology</h4>
+        </div>
+        <div class="modal-body">
+          <p> 
+             <ul>
+              <li>For each state in the year 2011, average number of cases across all diseases is computed.</li>
+              <li>The disease with number of cases more than the average count is declared as prevalent.</li>
+  
+            </ul>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+<script id="popup-template" type="text/template">
+<h2>{{state}}</h2>
+<strong>Capital: </strong>{{capital}} <br>
+<strong>Population: </strong>{{population}} <br>
+<strong>Area: </strong>{{area}} square kilometer <br>
+<strong>Disease Gradient: {{density}}</strong> <br>
+<strong>Growth: </strong>{{growth}} % <br>
+</script>
+
+<!-- <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
+<script src="jquery-2.1.3.min.js"></script>
+<script src="nv.d3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="census2011.js"></script>
+
+<script type="text/javascript" src="viz.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <script src="jquery-2.1.3.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <script src="d3.min.js"></script>
+
+  
+<style>
+body{
+  background: black;
+}
+
+
+circle {
+  fill: rgb(31, 119, 180);
+  fill-opacity: .25;
+  stroke: rgb(31, 119, 180);
+  stroke-width: 1px;
+}
+
+ .p circle {
+  fill: #FAFA05;
+  fill-opacity: 1;
+}
+
+ .d circle {
+  fill: #05FA1D;
+  fill-opacity: 1;
+}
+
+.legend {                                                   /* NEW */
+        font-size: 15px;                                         /* NEW */
+      }                                                           /* NEW */
+      rect {                                                      /* NEW */
+        stroke-width: 2;                                          /* NEW */
+      }  
+
+
+text {
+
+  font: 10px verdana;
+    color:white;
+}
+.new123{
+  color:white;
+}
+.new456{
+  padding-top:60px;
+}
+
+ {
+
+  font: 10px verdana;
+    color:white;
+}
+.new12{
+  padding-top: 40px;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../index.html">DataView 2016</a>
+    </div>
+    <ul class="nav navbar-nav">
+     <li ><a href="../index.html">Home</a></li>
+      <li ><a href="../Q1Final/index.html">Q1</a></li>
+      <li><a href="../Q2Final/index.html">Q2</a></li>
+      <li><a href="../Q3Part1Final/main.html">Q3 Part 1</a></li>
+      <li><a href="#">Q3 Part 2</a></li> 
+      <li class="active"><a href="index.html">Q4</a></li> 
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../aboutus.html">Team</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container col-sm-12">
+  <div class="container col-sm-10">
+<h2 class="new123">Associations among clusters of states made by pollutants and diseases </h2>
+<h4 class="new123">The values represented below are normalized values and do not correspond directly to actual values</h4>
+</div>
+<div class ="container col-sm-2 new12">
+<button type="button" class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#myModal3">Methodology</button>
+<div class="new456">
+<button type="button" class="btn btn-info btn-lg pull-right " data-toggle="modal" data-target="#myModal4">Inference</button>
+</div>
+
+</div>
+
+</div>
+
+
+<svg></svg>
+
+
+ 
+
+
+
+
+
+
+
+   <div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" align="center">Inference</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            <ul>
+              <li><b>Low count of diseases cases ==>  Low water pollution</b></li>
+                <li><b>Moderate-High water pollution ==>  Moderate count of diseases cases</b></li>
+            </ul>
+        </p>
+         
+        
+       
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Data Sets</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            <ul>
+              <li><a href="https://data.gov.in/catalog/number-cases-and-deaths-due-diseases">H-DS-1</a>: All India (from 2000 to 2011) and State-wise (2010 and 2011) number of cases and deaths due to specified diseases (Acute Diarrhoeal Diseases, Malaria, Acute Respiratory Infection, Japanese Encephalitis, Viral Hepatitis)</li>
+               <li><a href="https://data.gov.in/catalog/status-water-quality-india-2008-and-2011">W-DS-2</a>:Status of Water Quality in India - 2008 and 2011</li>
+            </ul>
+        </p>
+         <div class="modal-header">
+         
+          <h4 class="modal-title">Methodology</h4>
+        </div>
+       
+          <p> 
+             <ul>
+               <li>For every State:
+                <ul>
+                  <li>Consider “diseases cases/death count per unit population” and “water quality factors per unit population” normalized in the range [0,1]</li>
+                  <li>Diseases Considered are</li>
+                    <ul>
+                      <li>Acute diarrhoea, malaria, Japenese_Encephalitis, viral hepatitis</li>
+                    </ul>
+                    <li>Water quality factors considered are:
+                      <ul>
+                        <li>Temperature, Dissolved Oxygen, pH, Conductivity, Biochemical Oxygen, Nitrate, Coliform level (All mean values)</li>
+                      </ul>
+                    </li>
+                </ul>
+              </li>
+              <li>Generate clusters for states using <b>k-means</b> with k=5 (as inferred by elbow curve) considering:</li>
+              <ul>
+                <li>normalized counts for different diseases cases => results Cluster set A</li>
+                <li>normalized values for different Water quality factors => results Cluster set B</li>
+              </ul>
+              <li>Using Apriori association rules, we uncover the association between the cluster set A and B with a certain level of confidence and lift considering state-level pollutants and disease related data</li>
+            </ul>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      
+    </div>
+  </div>
+
+</body>
+
+<script>
+
+ var legendRectSize = 20;                                  
+        var legendSpacing = 10; 
+
+var diameter = 960,
+    format = d3.format(",d");
+
+var pack = d3.layout.pack()
+    .size([diameter - 4, diameter - 4])
+    .value(function(d) { return d.size; });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", diameter)
+    .attr("height", diameter)
+  .append("g")
+    .attr("transform", "translate(2,2)");
+
+d3.json("input.json", function(error, root) {
+  if (error) throw error;
+
+  var node = svg.datum(root).selectAll(".node")
+      .data(pack.nodes)
+    .enter().append("g")
+      .attr("class", function(d) { 
+
+        if(d.children){
+          return "node"
+        }else{
+
+          if(d.type && d["type"]== "p"){
+            return "leaf node p"
+          }else{
+             return "leaf node d"
+          }
+        }
+
+        
+         })
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+  node.append("title")
+      .text(function(d) { return d.name + (d.children ? "" : ": " + format(d.size)); });
+
+  node.append("circle")
+      .attr("r", function(d) { return d.r; });
+
+  node.filter(function(d) { return !d.children; }).append("text")
+      .attr("dy", ".3em")
+      .style("text-anchor", "middle")
+      .text(function(d) { return d.name.substring(0, d.r / 3); });
+});
+
+var legendData = [["#FAFA05","pollutants"],["#05FA1D","diseases"]]
+var color = d3.scale.category10(); 
+  var legend = svg.selectAll('.legend')                     
+          .data(legendData)                              
+          .enter()                                                
+          .append('g')                                            
+          .attr('class', 'legend')                                
+          .attr('transform', function(d, i) {                     
+            var height = legendRectSize + legendSpacing;          
+            var offset =  height *legendData.length / 2;     
+            var horz =  (2) * legendRectSize;                       
+            var vert = i * height + offset;                       
+            return 'translate(' + horz + ',' + vert + ')';        
+          });                                                     
+        legend.append('rect')                                     
+          .attr('width', legendRectSize)                          
+          .attr('height', legendRectSize)                         
+          .style('fill', function(d) { return d[0]; })                                   
+          .style('stroke', function(d) { return d[0]; });                                
+          
+        legend.append('text')                                     
+          .attr('x', legendRectSize + legendSpacing)              
+          .attr('y', legendRectSize - legendSpacing)              
+          .text(function(d) { return d[1]; })
+          .style('fill', function(d) { return d[0]; })
+
+d3.select(self.frameElement).style("height", diameter + "px");
+
+
+
+
+</script>
+
+

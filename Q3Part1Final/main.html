@@ -1,0 +1,172 @@
+
+
+<html>
+<head>
+  <meta charset=utf-8 />
+  <link href='nv.d3.min.css' rel='stylesheet' />
+  
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+  <!-- Template stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+
+  
+
+<style type="text/css">
+
+[data-toggle="buttons"] > .btn > input[type="radio"],
+[data-toggle="buttons"] > .btn > input[type="checkbox"] {
+    width: 1px;
+}
+
+
+
+.bar-graph1{
+
+
+  width: 700px;
+  height: 550px;
+  background: white;
+  opacity: 1;
+  text-align: center;
+
+}
+.new
+{
+  text-align: center;
+  font-color: red;
+  font-size: 15px;
+  font-weight: bold;
+
+}
+
+
+</style>
+
+</head>
+<body>
+
+   <nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../index.html">DataView 2016</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="../Q1Final/index.html">Q1</a></li>
+      <li><a href="../Q2Final/index.html">Q2</a></li>
+      <li class="active"><a href="Q3Part1/main.html">Q3 Part 1</a></li>
+      <li><a href="../Q3Part2Final/linebar.html">Q3 Part 2</a></li> 
+      <li><a href="../Q4Final/index.html">Q4</a></li> 
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../aboutus.html">Team</a></li>
+    </ul>
+  </div>
+</nav>
+
+</div>
+
+<div class="container new">
+  <p> How much money has been allocated to tackle specific diseases compared to others?</p>
+  </div>
+
+<div class="container col-sm-12">
+    <div class="container col-sm-6">
+         <div class="bar-graph1">
+          <br>
+          <label>Comparative Allocation for Disease Control</label>
+            <svg></svg>
+         </div>
+</div>
+    <div class="container col-sm-6">
+        <div class="container">
+          <div id='radiobtn' class="container">
+         <div id="pieChart">
+         </div>
+         </div>
+     </div>
+ </div>
+</div>
+
+<div class="container" align="center" >
+ 
+  <button type="button"  class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Methodology</button>
+  </div>
+
+
+
+
+
+
+         <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Question: How much money has been allocated to tackle specific diseases compared to others?</h4>
+        </div>
+        <div class="modal-body">
+          <h4 class="modal-title">Data Sets</h4>
+          <p>
+            <ul>
+              <li><a href="https://data.gov.in/catalog/outlays-department-health-agreed-planning-commission-during-tenth-plan">F-DS-3</a>:  Outlays for Department of Health as agreed by planning commission during Tenth Plan.</li>
+              <li><a href="https://data.gov.in/catalog/outlay-tenth-plan-tenth-plan-sum-annual-outlay-and-tenth-plan-actual-expenditure-department">F-DS-6</a>:  Outlay Tenth Plan, Tenth Plan (2002-07) sum of Annual Outlay and Tenth Plan (2002-07) Actual Expenditure for Department of Health and Family Welfare</li>
+              <li><a href="https://data.gov.in/sites/default/files/datafile/Outlay_and_Actual_Expenditure_other_than_NRHM_during_the_Tenth_Plan_for_Department_of_Health_and_Family_Welfare.xls">Data</a>:  Outlay and Actual Expenditure other than NRHM during the Tenth Plan (2002-2007) for Department of Health and Family Welfare</li>            </ul>
+        </p>
+        
+        <h4 class="modal-title">Methodology</h4>
+
+          <p> 
+             <ul>
+              <li>Extract the expenditures incurred during 9th and 10th plan for the various diseases from the datasets.</li>
+                
+
+              <li>Expenditures considered are:
+                <ul>
+                  <li>9th Plan Allocation, 10th Plan Allocation Agreed by PC and Sum of Actual Expenditure for 10th Plan</li>
+                </ul>
+              </li>
+
+              <li>Diseases Considered are:
+                <ul>
+                  <li> Vector-borne, Leprosy, AIDS, Guinea Worm, Disease Surveillance, Blindness, Cancer, IDD, Mental health, De-addiction, Tuberculosis, Leprosy Institutes(T), BCG, Pulse Polio</li>
+
+              </ul>
+              </li>
+
+
+
+  
+            </ul>
+          </p>
+        </div>
+
+
+      
+    </div>
+  </div>
+
+
+
+
+
+<script type="text/javascript" src="jquery-2.1.3.min.js"></script> 
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="d3.min.js"></script>
+<script src="d3pie.min.js"></script>
+<script src="pieChart.js"></script>
+<script src="nv.d3.min.js"></script>
+<script src="barGraph.js"></script>
+
+
+<script type="text/javascript" src="viz.js"></script>
+
+
+</body>
+</html>
